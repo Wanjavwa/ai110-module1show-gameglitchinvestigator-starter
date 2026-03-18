@@ -8,22 +8,32 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
----
+--- When I first ran the game for every figure I put it kept saying go lower and lower even though the secret number was higher than all the guesses I put in. Furthermore it allowed me to put in numbers that were out of bounds of the range highlighted in the question and it did not raise any concern or error for this.The second time I ran the code, it completey stopped recording my guesses. 
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+I used GitHub Copilot as my main AI teammate, including its Agent mode for refactoring tasks.
+
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+Copilot suggested refactoring the core game logic functions (like check_guess and parse_guess) from app.py into logic_utils.py to separate UI from logic. I verified this by running pytest, which passed all tests, and by importing the functions successfully without errors.
+
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+The original AI-generated code had incorrect hint messages in check_guess (e.g., "Too High" said "Go HIGHER!" instead of "Go LOWER!"). I verified this by running the game and seeing that hints misled players, and by examining the code logic which had swapped messages.
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+I decided a bug was fixed when pytest ran successfully with all tests passing, and when running the Streamlit app showed the expected behavior without errors.
+
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+I ran pytest on the test_game_logic.py file, which showed that the check_guess function now correctly returns "Too High" with "Go LOWER!" for guesses above the secret, confirming the hint logic was fixed.
+
 - Did AI help you design or understand any tests? How?
+Yes, Copilot helped generate a new test case (test_hint_message_correctness) that specifically checks the hint messages contain the correct guidance words, ensuring the fix was robust.
 
 ---
 
