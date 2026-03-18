@@ -8,7 +8,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
---- When I first ran the game for every figure I put it kept saying go lower and lower even though the secret number was higher than all the guesses I put in. Furthermore it allowed me to put in numbers that were out of bounds of the range highlighted in the question and it did not raise any concern or error for this.The second time I ran the code, it completey stopped recording my guesses. 
+--- When I first ran the game for every figure I put it kept saying go lower and lower even though the secret number was higher than all the guesses I put in. Furthermore it allowed me to put in numbers that were out of bounds of the range highlighted in the question and it did not raise any concern or error for this.The second time I ran the code, it completey stopped recording my guesses. Lastly the magic number kept changing every time.
 
 ## 2. How did you use AI as a teammate?
 
@@ -40,6 +40,7 @@ Yes, Copilot helped generate a new test case (test_hint_message_correctness) tha
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+Streamlit reruns are like refreshing the entire app every time you interact with it, such as clicking a button, which can reset variables if not stored properly. Session state is like a persistent storage that survives reruns, so you can keep track of things like scores or game progress across interactions.
 
 ---
 
@@ -47,5 +48,10 @@ Yes, Copilot helped generate a new test case (test_hint_message_correctness) tha
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+I want to reuse the habit of running tests after every fix to ensure changes work correctly.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+Next time, I would verify AI suggestions more thoroughly before implementing, especially for logic that might have edge cases.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+This project showed me that AI-generated code can have subtle bugs that need careful review, and collaborating with AI as a teammate can speed up fixes but requires critical thinking to avoid blindly accepting suggestions.
